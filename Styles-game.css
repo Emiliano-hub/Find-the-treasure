@@ -1,8 +1,85 @@
-body {
-  margin: 0;
+/* h1 {
+  color: #00f7ff;
+} */
+
+/* -----START-SECTION-PRESENTATION------- */
+html {
+  scroll-behavior: smooth;
 }
+
+body {
+  margin: auto;
+  padding: 0;
+}
+
+@font-face {
+  font-family: Anton;
+  src: url(Anton-Regular.ttf);
+}
+
+@font-face {
+  font-family: pixelmix;
+  src: url(pixelmix.ttf);
+}
+
+.WebSite {
+  min-height: calc(100vh - 50px);
+}
+
+/* <!-- START-principal-site --> */
+.Principal-site {
+  background: #6b9dbf;
+  /* width: 100vw; */
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  font-family: 'pixelmix';
+  font-size: 3em;
+  text-align: center;
+  align-items: center;
+}
+
+.Principal-site-hero {
+  background: #54718e;
+  height: 26.6%;
+  width: 100vw;
+  color: #9ebb4e;
+}
+
+.Input-toPlay {
+  background: #54848e;
+  height: 26.6%;
+  width: 100vw;
+  /* color: #262525; */
+}
+
+.Input-toPlay:hover {
+  background: white;
+}
+
+.Input-toPlay:active {
+  background: black;
+}
+
+.Input-toPlay a {
+  text-decoration: none;
+  color: #262525;
+}
+
+.Input-toPlay a :hover {
+  color: white;
+}
+
+.Nothing {
+  background: #548e7a;
+  height: 26.6%;
+  width: 100vw;
+}
+/* -----END-SECTION-PRESENTATION------- */
+
 .Game-container {
-  background-color: #1a4aaa;
+  background-color: #12496efb;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -12,41 +89,38 @@ body {
   position: relative;
   z-index: 0;
 }
-/* .Site-cold {
-  background: #00b7ff;
-  width: 300px;
-  height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  z-index: 1;
-}
-.Site-warm {
-  background: #c2560d;
-  width: 200px;
-  height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  z-index: 2;
-}
-.Site-heat {
-  background: hsl(49, 94%, 43%);
-  width: 100px;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  z-index: 3;
-} */
-.Box-heat {
-  background: red;
-  width: 50px;
-  height: 50px;
+.Text-container {
+  display: none;
   position: absolute;
   top: 0;
-  left: 0;
+  font-family: pixelmix;
+  width: auto;
+  text-align: center;
+  padding: 0 10px;
+}
+.Box-heat {
+  background: red;
+  width: 1px;
+  height: 1px;
+  position: absolute;
+}
+.Very-heat {
+  color: #ff0000;
+  margin: 28px 0;
+}
+.Heat {
+  color: #f8760d;
+  margin: 28px 0;
+}
+.Warm {
+  color: #fac209;
+  margin: 28px 0;
+}
+.Cold {
+  color: #00c3ff;
+  margin: 28px 0;
+}
+.Very-cold {
+  color: #4973ff;
+  margin: 28px 0;
 }

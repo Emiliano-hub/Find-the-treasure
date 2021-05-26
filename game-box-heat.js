@@ -1,15 +1,10 @@
 let spaceGame = document.getElementById('site-game');
-// let siteCold = document.getElementById('Cold');
-// let siteWarm = document.getElementById('Warm');
-// let siteHeat = document.getElementById('Heat');
 let boxHeat = document.getElementById('Box-heat');
+let text = document.getElementById('Indicator-text');
+let textContainer = document.getElementById('Text-container');
 
-boxHeat.addEventListener('click', boxClicked);
 spaceGame.addEventListener('click', spaceClicked);
-
 let levelGame = 0;
-// let x = 0;
-// let y = 0;
 let p = 0;
 let q = 0;
 
@@ -17,17 +12,15 @@ let spaceGameWidth = spaceGame.offsetWidth;
 let spaceGameHeight = spaceGame.offsetHeight;
 let boxWidth = boxHeat.offsetWidth;
 let boxHeight = boxHeat.offsetHeight;
-let Xbox = boxHeat.offsetLeft;
-let Ybox = boxHeat.offsetTop;
 
 let maxSpaceWidth = spaceGameWidth - boxWidth;
 let maxSpaceHeight = spaceGameHeight - boxHeight;
 
-function boxClicked(e) {
+function boxClicked() {
   positionRandom();
   boxHeat.style.left = x;
   boxHeat.style.top = y;
-  console.log(e);
+  alert('Congratulation you found the treasure');
   return (levelGame += 1);
 }
 
@@ -37,7 +30,15 @@ function positionRandom() {
   return x, y;
 }
 
+let classNames = ['Very-heat', 'Heat', 'Warm', 'Cold', 'Very-cold'];
+
 function spaceClicked(e) {
+  for (let i = 0; i < classNames.length; i++) {
+    text.classList.remove(classNames[i]);
+  }
+
+  textContainer.style.display = 'inline';
+
   p = e.clientX;
   q = e.clientY;
   Xbox = boxHeat.offsetLeft;
@@ -48,25 +49,32 @@ function spaceClicked(e) {
 
   z = Math.sqrt(catY ** 2 + catX ** 2);
 
-  if (z <= 100) {
-    alert('Very heat');
+  if (z <= 50) {
+    boxClicked();
+  }
+
+  if (z <= 100 && z > 50) {
+    text.classList.add('Very-heat');
+    text.innerHTML = 'VERY HEAT';
   }
 
   if (z <= 200 && z > 100) {
-    alert('Heat');
+    text.classList.add('Heat');
+    text.innerHTML = 'HEAT';
   }
 
   if (z <= 300 && z > 200) {
-    alert('Warm');
+    text.classList.add('Warm');
+    text.innerHTML = 'WARM';
   }
 
   if (z <= 500 && z > 300) {
-    alert('Frio');
+    text.classList.add('Cold');
+    text.innerHTML = 'COLD';
   }
 
   if (z > 500) {
-    alert('Muy frio');
+    text.classList.add('Very-cold');
+    text.innerHTML = 'VERY COLD';
   }
-  console.log(Xbox, Ybox);
-  return p, q;
 }
