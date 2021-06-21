@@ -1,5 +1,5 @@
 let spaceGame = document.getElementById('site-game');
-let boxHeat = document.getElementById('Box-heat');
+let boxHot = document.getElementById('Box-hot');
 let text = document.getElementById('Indicator-text');
 let textContainer = document.getElementById('Text-container');
 
@@ -10,16 +10,16 @@ let q = 0;
 
 let spaceGameWidth = spaceGame.offsetWidth;
 let spaceGameHeight = spaceGame.offsetHeight;
-let boxWidth = boxHeat.offsetWidth;
-let boxHeight = boxHeat.offsetHeight;
+let boxWidth = boxHot.offsetWidth;
+let boxHeight = boxHot.offsetHeight;
 
 let maxSpaceWidth = spaceGameWidth - boxWidth;
 let maxSpaceHeight = spaceGameHeight - boxHeight;
 
 function boxClicked() {
   positionRandom();
-  boxHeat.style.left = x;
-  boxHeat.style.top = y;
+  boxHot.style.left = x;
+  boxHot.style.top = y;
   alert('Congratulation you found the treasure');
   return (levelGame += 1);
 }
@@ -30,7 +30,7 @@ function positionRandom() {
   return x, y;
 }
 
-let classNames = ['Very-heat', 'Heat', 'Warm', 'Cold', 'Very-cold'];
+let classNames = ['Very-hot', 'Hot', 'Warm', 'Cold', 'Very-cold'];
 
 function spaceClicked(e) {
   for (let i = 0; i < classNames.length; i++) {
@@ -41,8 +41,8 @@ function spaceClicked(e) {
 
   p = e.clientX;
   q = e.clientY;
-  Xbox = boxHeat.offsetLeft;
-  Ybox = boxHeat.offsetTop;
+  Xbox = boxHot.offsetLeft;
+  Ybox = boxHot.offsetTop;
 
   catX = p - Xbox;
   catY = q - Ybox;
@@ -54,13 +54,13 @@ function spaceClicked(e) {
   }
 
   if (z <= 100 && z > 50) {
-    text.classList.add('Very-heat');
-    text.innerHTML = 'VERY HEAT';
+    text.classList.add('Very-hot');
+    text.innerHTML = 'VERY HOT';
   }
 
   if (z <= 200 && z > 100) {
-    text.classList.add('Heat');
-    text.innerHTML = 'HEAT';
+    text.classList.add('Hot');
+    text.innerHTML = 'HOT';
   }
 
   if (z <= 300 && z > 200) {

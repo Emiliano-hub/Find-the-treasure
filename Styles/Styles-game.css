@@ -98,22 +98,22 @@ body {
   text-align: center;
   padding: 0 10px;
 }
-.Box-heat {
+.Box-hot {
   background: red;
-  width: 1px;
-  height: 1px;
+  width: 0px;
+  height: 0px;
   position: absolute;
 }
-.Very-heat {
+.Very-hot {
   color: #ff0000;
-  animation-name: animation-very-heat;
+  animation-name: animation-very-hot;
   animation-duration: 0.1s;
   margin: 28px 0;
   animation-iteration-count: infinite;
 }
-.Heat {
+.Hot {
   color: #f8760d;
-  animation-name: animation-heat;
+  animation-name: animation-hot;
   animation-duration: 0.2s;
   margin: 28px 0;
   animation-iteration-count: infinite;
@@ -144,7 +144,7 @@ body {
   animation-timing-function: linear;
 }
 
-@keyframes animation-very-heat {
+@keyframes animation-very-hot {
   0% {
     margin: 28px 0;
   }
@@ -163,7 +163,7 @@ body {
   }
 }
 
-@keyframes animation-heat {
+@keyframes animation-hot {
   0% {
     margin: 28px 0;
   }
