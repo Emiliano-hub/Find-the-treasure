@@ -100,8 +100,8 @@ body {
 }
 .Box-hot {
   background: red;
-  width: 0px;
-  height: 0px;
+  width: 10px;
+  height: 10px;
   position: absolute;
 }
 .Very-hot {
