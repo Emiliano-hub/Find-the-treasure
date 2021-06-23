@@ -10,11 +10,8 @@ html {
 body {
   margin: auto;
   padding: 0;
-}
-
-@font-face {
-  font-family: Anton;
-  src: url(Anton-Regular.ttf);
+  user-select: none;
+  font-family: 'pixelmix';
 }
 
 @font-face {
@@ -45,13 +42,17 @@ body {
   height: 26.6%;
   width: 100vw;
   color: #9ebb4e;
+  display: flex;
+}
+
+.Principal-site-hero h1 {
+  margin: auto;
 }
 
 .Input-toPlay {
   background: #54848e;
   height: 26.6%;
   width: 100vw;
-  /* color: #262525; */
 }
 
 .Input-toPlay:hover {
@@ -94,14 +95,15 @@ body {
   position: absolute;
   top: 0;
   font-family: pixelmix;
+  font-size: 1.2em;
   width: auto;
   text-align: center;
   padding: 0 10px;
 }
 .Box-hot {
   background: red;
-  width: 10px;
-  height: 10px;
+  width: 0px;
+  height: 0px;
   position: absolute;
 }
 .Very-hot {
@@ -142,6 +144,15 @@ body {
   margin: 28px 0;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
+}
+/* #Counter { */
+/* } */
+.Counter-container {
+  position: absolute;
+  left: 5%;
+  top: 0%;
+  color: #03fa93;
+  font-size: 1.2em;
 }
 
 @keyframes animation-very-hot {

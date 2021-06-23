@@ -6,6 +6,8 @@ let presentation = document.getElementById('Principal-site');
 
 let buttonStart = document.getElementById('buttom-Play');
 
+let counter = document.getElementById('Counter');
+
 /* Listeners */
 buttonStart.addEventListener('click', start);
 spaceGame.addEventListener('click', spaceClicked);
@@ -31,7 +33,9 @@ let maxSpaceHeight = spaceGameHeight - boxHeight;
 spaceGame.style.display = 'none';
 
 function start() {
-  boxClicked();
+  positionRandom();
+  boxHot.style.left = x + 'px';
+  boxHot.style.top = y + 'px';
   spaceGame.style.display = 'flex';
 }
 
@@ -107,9 +111,7 @@ function boxClicked() {
   positionRandom();
   boxHot.style.left = x + 'px';
   boxHot.style.top = y + 'px';
-  if (levelGame > 0) {
-    alert('Congratulation you found the treasure');
-  }
+  alert('Congratulation you found the treasure');
   return (levelGame += 1);
 }
 
@@ -141,6 +143,8 @@ function spaceClicked(e) {
   if (z <= 50) {
     boxClicked();
     textContainer.style.display = 'none';
+    // counter = levelGame;
+    counter.innerHTML = levelGame;
   }
 
   if (z <= 100 && z > 50) {
