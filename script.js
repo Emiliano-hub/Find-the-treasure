@@ -8,6 +8,8 @@ let buttonStart = document.getElementById('buttom-Play');
 
 let counter = document.getElementById('Counter');
 
+let counterClick = document.getElementById('CounterClick');
+
 /* Listeners */
 buttonStart.addEventListener('click', start);
 spaceGame.addEventListener('click', spaceClicked);
@@ -17,6 +19,7 @@ spaceGame.addEventListener('click', spaceClicked);
 let levelGame = 0;
 let p = 0;
 let q = 0;
+let handleClick = 0;
 /* Variables */
 
 /* Addjusment sizes */
@@ -32,11 +35,26 @@ let maxSpaceHeight = spaceGameHeight - boxHeight;
 /* Start-Game */
 spaceGame.style.display = 'none';
 
+const messages = (message) => {
+  return new Promise((resolve, reject) => resolve(swal.fire(message)));
+};
+
+const getMessages = async () => {
+  let mesage1 = await messages(
+    'HELLO, IN THIS GAME YOU HAVE TO FIND THE HIDDEN TREASURE BY CLICKING ON THE GAME AREA UNTIL YOU FOUND IT.'
+  );
+  let mesage2 = await messages(
+    'YOU WILL HAVE AN INDICATOR TO DETECT YOUR COLSENESS WITH THE TREASURE'
+  );
+  let mesage3 = await scrollTo(0, 1000);
+};
+
 function start() {
   positionRandom();
   boxHot.style.left = x + 'px';
   boxHot.style.top = y + 'px';
   spaceGame.style.display = 'flex';
+  getMessages();
 }
 
 /* ADDING CLASS */
@@ -111,7 +129,6 @@ function boxClicked() {
   positionRandom();
   boxHot.style.left = x + 'px';
   boxHot.style.top = y + 'px';
-  alert('Congratulation you found the treasure');
   return (levelGame += 1);
 }
 
@@ -130,6 +147,9 @@ function spaceClicked(e) {
 
   textContainer.style.display = 'inline';
 
+  handleClick += 1;
+  counterClick.innerHTML = handleClick;
+
   p = e.clientX;
   q = e.clientY;
   Xbox = boxHot.offsetLeft;
@@ -143,8 +163,11 @@ function spaceClicked(e) {
   if (z <= 50) {
     boxClicked();
     textContainer.style.display = 'none';
-    // counter = levelGame;
     counter.innerHTML = levelGame;
+    Swal.fire('GOOD JOB!', 'YOU FOUND THE TREASURE', 'success');
+    handleClick = 0;
+    counterClick.innerHTML = handleClick;
+    return (handleClick = 0);
   }
 
   if (z <= 100 && z > 50) {

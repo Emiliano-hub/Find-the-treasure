@@ -154,6 +154,13 @@ body {
   color: #03fa93;
   font-size: 1.2em;
 }
+.CounterClick-container {
+  position: absolute;
+  right: 5%;
+  top: 0%;
+  color: #efff00;
+  font-size: 1.2em;
+}
 
 @keyframes animation-very-hot {
   0% {
@@ -249,3 +256,88 @@ body {
     color: #008cff;
   }
 }
+
+/* FOOTER ZONE */
+.footer {
+  color: white;
+  background-color: #1b2127;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  height: auto;
+}
+.email {
+  display: inline-block;
+  margin: 1% 1%;
+  font-size: 1.2em;
+  height: auto;
+}
+.contact-title {
+  color: #03a9f4;
+}
+.button-contact {
+  display: inline-block;
+  font-family: pixelmix;
+  font-size: 13px;
+  padding: 10px 15px;
+  color: #03fa93;
+  border: solid;
+  border-color: white;
+  border-radius: 5px;
+  transition: all 0.5s;
+  text-decoration: none;
+}
+.button-contact:hover {
+  border-color: rgb(70, 70, 70);
+  font-size: 18px;
+}
+.social {
+  margin: 2% auto;
+}
+.social-link {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background-size: 50px 50px;
+  margin: 0px 10px;
+  transition: all 0.5s;
+}
+
+.social-link.twitter {
+  background-image: url('Img/twitter.svg');
+}
+.social-link.twitter:hover {
+  transform: scale(1.2);
+}
+
+.social-link.facebook {
+  background-image: url('Img/facebook.svg');
+}
+.social-link.facebook:hover {
+  transform: scale(1.2);
+}
+
+.social-link.github {
+  background-image: url('Img/github.svg');
+}
+.social-link.github:hover {
+  transform: scale(1.2);
+}
+
+.social-link.instagram {
+  background-image: url('Img/instagram.svg');
+}
+.social-link.instagram:hover {
+  transform: scale(1.2);
+}
+/* FOOTER ZONE */
+
+/* MEDIAQUERIES */
+
+@media screen and (max-width: 630px) {
+  .button-contact {
+    margin: 1em auto;
+  }
+}
+/* MEDIAQUERIES */
