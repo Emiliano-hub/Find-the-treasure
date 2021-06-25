@@ -46,15 +46,18 @@ const getMessages = async () => {
   let mesage2 = await messages(
     'YOU WILL HAVE AN INDICATOR TO DETECT YOUR COLSENESS WITH THE TREASURE'
   );
-  let mesage3 = await scrollTo(0, 1000);
+  // let mesage3 = await scrollTo(0, 657);
 };
 
 function start() {
-  positionRandom();
-  boxHot.style.left = x + 'px';
-  boxHot.style.top = y + 'px';
-  spaceGame.style.display = 'flex';
-  getMessages();
+  if (levelGame === 0 && handleClick === 0) {
+    positionRandom();
+    boxHot.style.left = x + 'px';
+    boxHot.style.top = y + 'px';
+    spaceGame.style.display = 'flex';
+    getMessages();
+  }
+  scrollTo(0, spaceGameHeight);
 }
 
 /* ADDING CLASS */

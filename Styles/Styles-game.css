@@ -19,9 +19,9 @@ body {
   src: url(pixelmix.ttf);
 }
 
-.WebSite {
+/* .WebSite {
   min-height: calc(100vh - 50px);
-}
+} */
 
 /* <!-- START-principal-site --> */
 .Principal-site {
@@ -258,7 +258,7 @@ body {
 }
 
 /* FOOTER ZONE */
-.footer {
+.Contact {
   color: white;
   background-color: #1b2127;
   display: flex;
@@ -269,7 +269,7 @@ body {
 }
 .email {
   display: inline-block;
-  margin: 1% 1%;
+  margin: 2% 2%;
   font-size: 1.2em;
   height: auto;
 }
@@ -293,7 +293,7 @@ body {
   font-size: 18px;
 }
 .social {
-  margin: 2% auto;
+  margin: 2% 2%;
 }
 .social-link {
   display: inline-block;
@@ -331,6 +331,15 @@ body {
 .social-link.instagram:hover {
   transform: scale(1.2);
 }
+.Credits {
+  display: flex;
+  background: #1b2127;
+  justify-content: center;
+  font-family: Agency FB;
+  color: #efff00;
+  font-size: 1.5em;
+  letter-spacing: 2px;
+}
 /* FOOTER ZONE */
 
 /* MEDIAQUERIES */
@@ -338,6 +347,12 @@ body {
 @media screen and (max-width: 630px) {
   .button-contact {
     margin: 1em auto;
+  }
+  .Contact {
+    text-align: center;
+  }
+  .social {
+    margin: 2% auto;
   }
 }
 /* MEDIAQUERIES */
