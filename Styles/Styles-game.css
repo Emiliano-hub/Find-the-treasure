@@ -302,32 +302,22 @@ body {
   background-size: 50px 50px;
   margin: 0px 10px;
   transition: all 0.5s;
+  /* color: white; */
+  /* background: #ffffff; */
 }
 
-.social-link.twitter {
-  background-image: url('Img/twitter.svg');
-}
 .social-link.twitter:hover {
   transform: scale(1.2);
 }
 
-.social-link.facebook {
-  background-image: url('Img/facebook.svg');
-}
 .social-link.facebook:hover {
   transform: scale(1.2);
 }
 
-.social-link.github {
-  background-image: url('Img/github.svg');
-}
 .social-link.github:hover {
   transform: scale(1.2);
 }
 
-.social-link.instagram {
-  background-image: url('Img/instagram.svg');
-}
 .social-link.instagram:hover {
   transform: scale(1.2);
 }
